@@ -1,0 +1,43 @@
+.akun-list {
+    .x-grid-td {
+        vertical-align: middle;
+
+        img {
+            @include border-radius($circle-border-radius);
+        }
+    }
+
+    .x-grid-body {
+        border-width: 1px;
+    }
+
+    .x-grid-row-over .x-grid-cell {
+        background-color: grey;
+    }
+
+    .x-grid-row-selected .x-grid-cell {
+        background-color: grey;
+    }
+
+    .changed_colour_1 .x-grid-cell {
+        border-bottom: 1px solid lightgray;
+        background-color: wheat;
+    }
+    .changed_colour_2 .x-grid-cell {
+        border-bottom: 1px solid lightgray;
+        background-color: turquoise;
+    }
+    .changed_colour_3 .x-grid-cell {
+        border-bottom: 1px solid lightgray;
+        background-color: yellow;
+    }
+    .changed_colour_4 .x-grid-cell {
+        border-bottom: 1px solid lightgray;
+        background-color: yellowgreen;
+    }
+    .changed_colour_red .x-grid-cell {
+        border-bottom: 1px solid red;
+        background-color: red;
+    }
+
+}

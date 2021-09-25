@@ -1,0 +1,52 @@
+.soal-all {
+    background-color: #f6f6f6;
+    
+    .soal {
+        background-color: #fff;
+        margin: 5px 0 5px 0;
+        padding: 10px;
+        
+        max-width: 100%;
+
+        img {
+            max-width: 100%;    
+        }
+
+        .selector {
+            background-color: #fff;
+            width: 165px;
+        }
+
+        .subtitle {
+            background-color: #8C8C8C; 
+            color: white; 
+            padding: 10px; 
+            margin: 10px 0 10px 0; 
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #04AA6D;
+        color: white;
+        padding: 5px;
+        width: 80px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.9;
+    }
+    
+    button:hover {
+        opacity:1;
+    }
+
+    .deletebtn {
+        background-color: #f44336;
+    }
+    
+    .editbtn {
+        margin: 0 0 0 5px;
+    }
+}

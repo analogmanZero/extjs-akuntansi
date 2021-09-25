@@ -1,0 +1,16 @@
+.operator-grid {
+    .x-grid-td {
+        vertical-align: middle;
+
+        img {
+            @include border-radius($circle-border-radius);
+        }
+    }
+
+    .x-grid-body {
+        border-width: 1px;
+    }
+}
+.x-action-col-icon {
+    font-size: 13px !important;
+}

@@ -1,0 +1,27 @@
+.fielupload {
+    
+    .keterangan {
+        font-style: italic;
+        font-weight: 700;
+        font-size: 0.9em;
+        padding-bottom: 10px !important;
+        margin-top: 5px !important;
+    }
+
+    .filedownload {
+        padding-top: 10px !important;
+        padding-left: 10px !important;
+    }
+
+    a {
+        color: #1e90ff;
+        font-weight: 700;
+        font-size: 1.2em;
+        
+        // States
+        &:hover,
+        &:focus {
+        text-decoration: none;
+        }
+    }
+}

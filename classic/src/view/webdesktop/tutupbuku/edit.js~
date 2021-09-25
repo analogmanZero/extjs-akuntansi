@@ -1,0 +1,111 @@
+Ext.define('Admin.view.webdesktop.tutupbuku.edit', {
+
+    extend: 'Ext.window.Window',
+    alias : 'widget.tutupbukuedit',
+
+    layout: 'fit',
+    modal: true,
+
+    title: 'Proses Tutup Buku',
+    height: 175,
+    width: 450,
+
+    initComponent: function() {
+        var me = this;      
+
+        me.items = [{
+            xtype: 'form',
+            border: false,
+            layout: 'border',
+            bodyPadding: 10,
+
+            fieldDefaults: {
+                msgTarget: 'side',
+                labelWidth: 120
+            },
+            items: [{
+                xtype: 'container',
+                region: 'center',
+                layout: 'anchor',
+                items: [{
+                    xtype: 'textfield',
+                    allowBlank: false,
+                    inputType: 'password',
+                    fieldLabel: 'Password',
+                    name: 'pass',
+                    anchor: '70%'
+                }, {
+                        xtype: 'datefield',
+                        itemId: 'tanggal',
+                        format: 'd-m-Y',
+                        name: 'tanggal',
+                        fieldLabel: 'Tanggal Tutup ',
+                        anchor: '65%'
+                    },/*{
+                    xtype: 'textfield',
+                    fieldLabel: 'Tahun',
+                    name: 'tahun',
+                    maxLength: 4,
+                    anchor: '45%'
+                },*/ {
+                    xtype: 'textfield',
+                    fieldLabel: 'Keterangan',
+                    name: 'keterangan',
+                    anchor: '100%'
+                }]
+            }, {
+                xtype: 'container',
+                region: 'south',
+                layout: 'hbox',
+                items: [{
+                    xtype: 'container',
+                    flex: 1
+                }, {
+                    xtype: 'button',
+                    text: 'Proses',
+                    width: 50,
+                    listeners: {
+                        click: function() {
+                            Ext.MessageBox.confirm('Konfirmasi', 'Pastikan tidak ada kesalahan!', function(btn,text) {
+                                if(btn=='yes') {
+                                    me.down('form').getForm().waitMsgTarget = me.down('form').up('window').getEl();
+                                    me.down('form').getForm().submit({
+                                        method:'POST',
+                                        url: 'api/store/tutupbuku/proses.php',
+                                        waitMsg: 'Proses Tutup Buku...',
+                                        success:function(f, a) {
+
+                                            Ext.Msg.alert('Sukses', a.result.message, function(btn, text){
+                                                me.close();
+                                                me.parent.down('grid').store.loadPage(1);
+                                            });
+                                        },
+                                        failure:function(form, action){
+                                            Ext.MessageBox.show({
+                                                title: 'Gagal',
+                                                msg: action.result?action.result.message:'Kesalahan sistem, ulangi lagi.',
+                                                buttons: Ext.MessageBox.OK,
+                                                icon: Ext.MessageBox.ERROR
+                                            })
+                                        }
+                                    });
+                                }
+                            });
+
+                        }
+                    }
+                }, {
+                    xtype: 'container',
+                    width: 5
+                }, {
+                    xtype: 'button',
+                    text: 'Batal',
+                    width: 50,
+                    scope: this,
+                    handler: this.close
+                }]
+            }]
+        }];
+        me.callParent(arguments);
+    }
+});

@@ -1,0 +1,488 @@
+.start-look {
+    background-image:url(../images/webdesktop/gears.gif) !important;
+}
+
+.start-option {
+    background-image:url(../images/webdesktop/setting.png) !important;
+}
+
+.start-logout {
+    background-image:url(../images/webdesktop/logout.png) !important;
+}
+
+.login-masuk {
+    background-image:url(../images/webdesktop/masuk.png) !important;
+}
+
+.login-daftar {
+    background-image:url(../images/webdesktop/daftar.png) !important;
+}
+
+.welcome-text {
+    font-size: 12px;
+    color: #fff;
+    font-weight: normal;
+}
+
+.uxx-normal {
+	position: relative;    
+    text-align: center;
+    padding-top: 8px;
+    border: 1px;
+    z-index:1;
+   
+}
+
+.reload {
+    background-image:url(../images/webdesktop/refresh.png) !important;
+}
+
+.up {
+    background-image:url(../images/webdesktop/arrow_up.png) !important;
+}
+.down {
+    background-image:url(../images/webdesktop/arrow_down.png) !important;
+}
+
+.cog_edit {
+     background-image:url(../images/webdesktop/shared/icons/fam/cog_edit.png) !important;
+}
+.grid {
+     background-image:url(../images/webdesktop/shared/icons/fam/grid.png) !important;
+}
+
+.book {
+     background-image:url(../images/webdesktop/shared/icons/fam/book.png) !important;
+}
+.logo {
+     background-image:url(../images/webdesktop/shared/icons/fam/logo.png) !important;
+}
+.setting {
+    background-image:url(../images/webdesktop/shared/icons/fam/setting.png) !important;
+}
+.editharga {
+    background-image:url(../images/webdesktop/editharga.png) !important;
+}
+.print {
+    background-image:url(../images/webdesktop/shared/icons/fam/printer.png) !important;
+}
+.add {
+    background-image:url(../images/webdesktop/shared/icons/fam/add.gif) !important;
+}
+.edit {
+    background-image:url(../images/webdesktop/shared/icons/fam/plugin.gif) !important;
+}
+.save {
+    background-image: url(../images/webdesktop/save.png) !important;
+}
+.cancel {
+    background-image: url(../images/webdesktop/cancel.png) !important;
+}
+.table_list {
+    background-image:url(../images/webdesktop/shared/icons/fam/table.png) !important;
+}
+.report {
+    background-image:url(../images/webdesktop/shared/icons/fam/report.png) !important;
+}
+.remove {
+    background-image:url(../images/webdesktop/shared/icons/fam/delete.gif) !important;
+}
+.export {
+    background-image:url(../images/webdesktop/shared/icons/fam/export.png) !important;
+}
+.import {
+    background-image:url(../images/webdesktop/shared/icons/fam/import.png) !important;
+}
+.task {
+    background-image: url(../images/webdesktop/shared/icons/fam/cog.gif) !important;
+}
+.saldoAwal {
+    background-image: url(../images/webdesktop/coins.png) !important;
+}
+.task-folder {
+    background-image: url(../images/webdesktop/shared/icons/fam/folder_go.gif) !important;
+}
+.empty-folder {
+    background-image: url(../images/webdesktop/shared/icons/fam/blank.gif) !important;
+}
+.x-grid-checkheader {
+    height: 14px;
+    background-image: url('../images/webdesktop/unchecked.gif');
+    background-position: 50% -2px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.x-grid-checkheader-checked {
+    background-image: url('../images/webdesktop/checked.gif');
+}
+.x-grid-checkheader-editor .x-form-cb-wrap {
+    text-align: center;
+}
+
+/* shared styles for the ActionColumn icons */
+.x-action-col-cell img {
+    height: 16px;
+    width: 32px;
+    text-align: center;
+}
+
+.x-action-col-cell img.button_col_2 {
+    background-image: url('../images/webdesktop/table_add.png');
+    cursor: pointer;
+}
+.pl-window .x-window-body{
+    background-color:#fff;
+}
+
+.css_draft:hover .x-grid-cell {
+    background-color: lightgray;
+}
+
+.css_draft .x-grid-cell {
+    border-bottom: 1px solid lightgray;
+    background-color: gray;
+}
+
+.css_open:hover .x-grid-cell {
+    background-color: #C7A317;
+}
+
+.css_open .x-grid-cell {
+    border-bottom: 1px solid lightgray;
+    background-color: #FFA500;
+}
+
+.css_sisa:hover .x-grid-cell {
+    background-color: tomato;
+}
+
+.css_sisa .x-grid-cell {
+    border-bottom: 1px solid lightgray;
+    background-color: red;
+}
+
+.css_hijau .x-grid-cell {
+    background-color: green;
+}
+
+.css_merah .x-grid-cell {
+    background-color: red;
+}
+
+.css_kuning .x-grid-cell {
+    background-color: #f5d833;
+}
+
+.css_transparan .x-grid-cell {
+    background-color: transparent;
+}
+
+.ux-wallpaper {
+    background-color: #3d71b8;
+}
+
+.ux-wallpaper-tiled {
+    background-repeat: repeat;
+}
+.ux-desktop-shortcut {
+    cursor: pointer;
+    text-align: center;
+    padding-top: 8px;
+    width: 85px;
+    border: 1px;
+}
+
+.ux-desktop-shortcut-icon {
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+.ux-desktop-shortcut-text {
+    font: normal 10px tahoma,arial,verdana,sans-serif;
+    text-decoration: none 
+}
+
+.normal {
+     font: normal 10px tahoma,arial,verdana,sans-serif;
+     text-decoration: none;
+     color: #999;
+ }
+
+ .red {
+     font: normal 10px tahoma,arial,verdana,sans-serif;
+     text-decoration: blink;
+     color: red;
+ }
+
+.x-view-over .ux-desktop-shortcut-text {
+    text-decoration: underline;
+}
+
+
+.ux-desktop-shortcut-depan {
+	position: relative;
+	z-index: 10;
+	 background: transparant;    
+    cursor: pointer;
+    text-align: center;
+    padding-top: 8px;
+    width: 85px;
+    border: 1px;
+}
+
+.ux-desktop-shortcut-text-depan {
+    font: 11px Arial, Helvetica, sans-serif;   
+    color : white ;
+	 text-shadow: 1px 2px 1px #000000;
+}
+
+.x-view-over-depan {
+    border:1px solid #dddddd;
+    padding: 4px;
+}
+
+.hijau-shortcut {
+    background-image: url(../images/webdesktop/hijau.jpg);
+}
+
+.merah-shortcut {
+    background-image: url(../images/webdesktop/merah.jpg);
+}
+
+.menu-title{
+            background: #D6E3F2;
+            border-style: solid;
+            border-color:#DAE6F4 #99bbe8 #99bbe8 #DAE6F4;
+            border-width: 1px;
+            margin:-2px -2px 0;
+            color:#15428b;
+            font:bold 10px tahoma,arial,verdana,sans-serif;
+            display:block;
+            padding:3px;
+        }
+        
+        .blinkytext {
+            text-decoration: blink;
+            font-weight: bold;
+            font-style: italic;
+            color: red;
+        }
+    			
+        .x-action-col-cell img.download-col {
+            height: 16px;
+            width: 20px;
+            cursor: pointer;
+            background: url('resources/images/webdesktop/page_white_put.png') no-repeat center center;
+        }
+        
+        .x-action-col-cell img.upload-col {
+            height: 16px;
+            width: 20px;
+            cursor: pointer;
+            background: url('resources/images/webdesktop/page_white_get.png')no-repeat center center;
+        }
+        
+        .x-action-col-cell img.restore-col {
+                height: 16px;
+                width: 20px;
+                cursor: pointer;
+                background: url('resources/images/webdesktop/page_refresh.png') no-repeat center center;
+            }
+
+            .x-action-col-cell img {
+                height: 16px;
+                width: 36px;
+                cursor: pointer;
+            }
+          
+          .feed-list {
+                padding: 0 3px 0 3px;
+            }
+
+            .feed-list-item {
+                margin-top: 3px;
+                padding-left: 20px;
+                font-size: 11px;
+                line-height: 20px;
+                cursor: pointer;
+                background: url(images/rss.gif) no-repeat 0 2px;
+                border: 1px solid #fff;
+            }
+
+            .feed-list .x-item-selected {
+                font-weight: bold;
+                color: #15428B;
+                background-color: #DFE8F6;
+                border: 1px dotted #A3BAE9;
+            }
+
+            .feed-list-item-hover {
+                background-color: #FFA500;
+            }
+
+    .custom-grid .x-grid-row-over .x-grid-cell {
+        background-color: grey;
+    }
+
+    .custom-grid .x-grid-row-selected .x-grid-cell {
+        background-color: grey;
+    }
+
+    .changed_colour_1 .x-grid-cell {
+        border-bottom: 1px solid lightgray;
+        background-color: wheat;
+    }
+    .changed_colour_2 .x-grid-cell {
+        border-bottom: 1px solid lightgray;
+        background-color: turquoise;
+    }
+    .changed_colour_3 .x-grid-cell {
+        border-bottom: 1px solid lightgray;
+        background-color: yellow;
+    }
+    .changed_colour_4 .x-grid-cell {
+        border-bottom: 1px solid lightgray;
+        background-color: yellowgreen;
+    }
+    .changed_colour_red .x-grid-cell {
+        border-bottom: 1px solid red;
+        background-color: red;
+    }
+
+
+    .login_button {
+        background-image:url(../images/webdesktop/login_button.png) !important;
+    }
+    .login_title {
+        background-image:url(../images/webdesktop/login_title.png) !important;
+    }
+    .upload {
+        background-image:url(../images/webdesktop/upload.png) !important;
+    }
+    .welcome {
+        padding-left: 23px;
+        background: url(../images/webdesktop/group-icon.png) no-repeat;
+    }
+    .logout {
+        background-image: url(../images/webdesktop/logout.png) !important;
+    }
+    .bogus {
+        background-image: url(../images/webdesktop/bogus.png) !important;
+    }
+    .options_icon {
+        background-image: url(../images/webdesktop/gears.png) !important;
+    }
+    .change_password {
+        background-image: url(../images/webdesktop/key.png) !important;
+    }
+    .change_wallpaper {
+        background-image: url(../images/webdesktop/images.png) !important;
+    }
+    .add {
+        background-image:url(../images/webdesktop/add.png) !important;
+    }
+    .edit {
+        background-image:url(../images/webdesktop/edit.png) !important;
+    }
+    .remove {
+        background-image:url(../images/webdesktop/delete.png) !important;
+    }
+    .save {
+        background-image: url(../images/webdesktop/save.png) !important;
+    }
+    .cancel {
+        background-image: url(../images/webdesktop/cancel.png) !important;
+    }
+    .view {
+        background-image:url(../images/webdesktop/application.png) !important;
+    }
+    
+    .edit_disabled {
+        background-image:url(../images/webdesktop/edit_disabled.png) !important;
+    }
+       
+    .remove_disabled {
+        background-image:url(../images/webdesktop/delete_disabled.png) !important;
+    }
+        
+    .view_disabled {
+        background-image:url(../images/webdesktop/application_disabled.png) !important;
+    }
+    
+    .export {
+        background-image:url(../images/webdesktop/export.png) !important;
+    }
+    .import {
+        background-image:url(../images/webdesktop/import.png) !important;
+    }
+    .user {
+        background-image: url(../images/webdesktop/cog.gif) !important;
+    }
+    .task {
+        background-image: url(../images/webdesktop/cog.gif) !important;
+    }
+    .simpan {
+        background-image: url(../images/webdesktop/save.png) !important;
+    }
+    .task-folder {
+        background-image: url(../images/webdesktop/folder_go.gif) !important;
+    }
+    .empty-folder {
+        background-image: url(../images/webdesktop/blank.gif) !important;
+    }
+    
+    .inisialisasi {
+        background-image: url(../images/webdesktop/computer.png) !important;
+    }
+    .print {
+        background-image: url(../images/webdesktop/print.png) !important;
+    }
+    .up {
+        background-image:url(../images/webdesktop/arrow_up.png) !important;
+    }
+    .down {
+        background-image:url(../images/webdesktop/arrow_down.png) !important;
+    }
+    
+    .matauang {
+        background-image: url(../images/webdesktop/matauang.png) !important;
+    }
+    
+    .termin {
+        background-image: url(../images/webdesktop/termin.png) !important;
+    }
+    
+    .pajak {
+        background-image: url(../images/webdesktop/pajak.png) !important;
+    }
+    
+    .penjual {
+        background-image: url(../images/webdesktop/sales.png) !important;
+    }
+    
+    .penjualan {
+        background-image: url(../images/webdesktop/penjualan.png) !important;
+    }
+    
+    .so {
+        background-image: url(../images/webdesktop/so.png) !important;
+    }
+    
+    .pembelian {
+        background-image: url(../images/webdesktop/pembelian.png) !important;
+    }
+    
+    .po {
+        background-image: url(../images/webdesktop/po.png) !important;
+    }
+    
+    .x-action-col-cell img
+    {
+      width: 22px;
+      height: 16px;
+      cursor: pointer;
+      background-repeat: no-repeat;
+      background-position: center;
+    }

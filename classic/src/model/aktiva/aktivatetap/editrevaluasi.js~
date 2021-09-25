@@ -1,0 +1,4 @@
+Ext.define('Admin.model.aktivatetap.editrevaluasi', {
+    extend: 'Ext.data.Model',
+    fields: ['nilai']
+});

@@ -1,0 +1,195 @@
+Ext.define('Admin.view.webdesktop.inv.penystock.list', {
+
+    extend: 'Ext.window.Window',
+    alias : 'widget.penystocklist',
+    modulId: 'SA',
+    title : 'Data Stok Awal / Data Penyesuaian Stok',
+    itemId: 'SA',
+    layout: 'border',
+    border: false,
+    width: 600,
+    height: 400,
+
+    constructor: function(c) {
+        var me = this;
+            var grid_name = new Array('penystock-list', 'stockawal-list');
+
+        Ext.apply(c, {
+            
+            listeners: {
+                beforeRender: function() {
+                    for(var i=0; i<grid_name.length; i++) {
+                        var store = me.down('#'+grid_name[i]).getStore(),
+                            proxy = store.getProxy();
+
+                        proxy.extraParams['from'] = me.down('[name=from]').getSubmitValue();
+                        proxy.extraParams['to'] = me.down('[name=to]').getSubmitValue();
+
+                        store.loadPage(1);
+                    }
+                        
+                    
+                }
+            },
+            items: [{
+                xtype: 'panel',
+                region: 'north',
+                height: 34,
+                border: true,
+                bodyPadding: 5,
+                layout: 'border',
+                items: [{
+                    xtype: 'container',
+                    region: 'center',
+                    layout: 'hbox',
+                    items:[{
+                        xtype: 'cabangfield',
+                        labelWidth: 50,
+                        anchor: '50%',
+                        name: 'cabang',
+                        itemId: 'cabang',
+                        fieldLabel: 'Cabang',
+                        listenSelect: function() {
+                            var combo = this;
+                            
+                            for(var i=0; i<grid_name.length; i++) {
+                                var store = me.down('#'+grid_name[i]).getStore(),
+                                    proxy = store.getProxy();
+
+                                proxy.extraParams['cabang'] = combo.getValue();
+                                store.loadPage(1);
+                            }
+                        }
+                    }, {
+                        xtype: 'container',
+                        flex: 1
+                    }, {
+                        xtype: 'datefield',
+                        name: 'from',
+                        fieldLabel: 'Mulai Tgl.',
+                        labelWidth: 55,
+                        width: 160,
+                        value: new Date(),
+                        format: 'd-m-Y',
+                        listeners: {
+                            change: function(d) {
+                                for(var i=0; i<grid_name.length; i++) {
+                                    var store = me.down('#'+grid_name[i]).getStore(),
+                                        proxy = store.getProxy();
+                    
+                                    proxy.extraParams['from'] = d.getSubmitValue();
+                                    store.loadPage(1);
+                                }
+                            }
+                        }
+                    }, {
+                        xtype: 'container',
+                        width: 5
+                    }, {
+                        xtype: 'datefield',
+                        name: 'to',
+                        fieldLabel: 'Sd. Tgl.',
+                        labelWidth: 50,
+                        width: 155,
+                        value: new Date(),
+                        format: 'd-m-Y',
+                        listeners: {
+                            change: function(d) {
+                                for(var i=0; i<grid_name.length; i++) {
+                                    var store = me.down('#'+grid_name[i]).getStore(),
+                                        proxy = store.getProxy();
+                    
+                                    proxy.extraParams['to'] = d.getSubmitValue();
+                                    store.loadPage(1);
+                                }
+                            }
+                        }
+                    }]
+                }]
+            }, {
+                    xtype: 'tabpanel',
+                    akses: c.akses,
+                    aksesStore: c.aksesStore,
+                    itemId: 'SA',
+                    items: [Ext.create('Admin.view.webdesktop.plgrid', {
+                        title: 'Penyesuaian',
+                        status: 'PS',
+                        layout: 'fit',
+                        classId: 'so',
+                        itemId: 'penystock-list',
+                        editTitle: 'Tambah & Penyesuaian Stok',
+                        editWidth: 915,
+                        editHeight: 385,
+                        menu: 'inventori',
+                        path: 'penystock',
+                        form: 'penystock',
+                        head: [['penystock','', 115]],
+                        details: [['grid','Utama'], ['detail', 'Detail']],
+                        store: Ext.create('Admin.store.stores', {
+                            fields: [
+                                {name: 'id', type: 'string'},
+                                {name: 'notrx', type: 'string'},
+                                {name: 'tanggal', type: 'string'},
+                                {name: 'gdAsal', type: 'string'},
+                                {name: 'status', type: 'string'}
+                             ],
+                            url: 'api/store/penystock/dataStore.php',
+                            params: {cabang: c.aksesStore.getAt(0).data["kodecabang"], status: 'PS'}
+                        }),
+                        columns: [                    
+                            {text: 'Kode Transaksi', flex: 1, sortable: true, dataIndex: 'notrx', align: 'center'},
+                            {text: 'Tanggal', flex: 1, sortable: true, dataIndex: 'tanggal', align: 'center'},
+                            {text: 'Gudang Asal', flex: 1, sortable: true, dataIndex: 'gdAsal', align: 'center'},
+                            {text: 'Status', flex: 1, sortable: true, dataIndex: 'status', align: 'center'}
+                        ]
+                    }), Ext.create('Admin.view.webdesktop.plgrid', {
+                        title: 'Stock Awal',
+                        status: 'SA',
+                        layout: 'fit',
+                        classId: 'so',
+                        itemId: 'stockawal-list',
+                        editTitle: 'Tambah & Stok Awal',
+                        editWidth: 915,
+                        editHeight: 385,
+                        menu: 'inventori',
+                        path: 'penystock',
+                        form: 'penystock',
+                        head: [['penystock','', 115]],
+                        details: [['grid','Utama'], ['detail', 'Detail']],
+                        store: Ext.create('Admin.store.stores', {
+                            fields: [
+                                {name: 'id', type: 'string'},
+                                {name: 'notrx', type: 'string'},
+                                {name: 'tanggal', type: 'string'},
+                                {name: 'gdAsal', type: 'string'},
+                                {name: 'status', type: 'string'}
+                             ],
+                            url: 'api/store/penystock/dataStore.php',
+                            params: {cabang: c.aksesStore.getAt(0).data["kodecabang"], status: 'SA'}
+                        }),
+                        columns: [                    
+                            {text: 'Kode Transaksi', flex: 1, sortable: true, dataIndex: 'notrx', align: 'center'},
+                            {text: 'Tanggal', flex: 1, sortable: true, dataIndex: 'tanggal', align: 'center'},
+                            {text: 'Gudang Asal', flex: 1, sortable: true, dataIndex: 'gdAsal', align: 'center'},
+                            {text: 'Status', flex: 1, sortable: true, dataIndex: 'status', align: 'center'}
+                        ]
+                    })]                
+            }]
+        });
+
+        this.callParent(arguments);
+    },
+
+    afterRender: function() {
+
+        this.callParent();
+
+        this.down('#cabang').isInitValue = true;
+        this.down('#cabang').setValue(this.aksesStore.getAt(0).data["kodecabang"]);
+        this.down('#cabang').setReadOnly(this.aksesStore.getAt(0).data["multicabang"]=='N');
+
+    }
+});
+
+
+

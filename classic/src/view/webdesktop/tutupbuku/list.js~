@@ -1,0 +1,67 @@
+Ext.define('Admin.view.webdesktop.tutupbuku.list' ,{
+
+    extend: 'Ext.window.Window',
+    alias : 'widget.tutupbuku',
+
+    title : 'Tutup Buku Tahunan',
+
+    layout: 'border',
+    modulId: 'TH',
+    width: 600,
+    height: 400,
+    border: true,
+    
+    initComponent: function() {
+        var me = this;
+
+        this.items = [
+            Ext.create('Ext.grid.Panel', {
+                region: 'center',
+                layout: 'fit',
+                border: true,
+                flex: 1,
+                store: Ext.create('Admin.store.stores', {
+                    fields: [
+                        {name: 'tahun', type: 'string'},
+                        {name: 'keterangan', type: 'string'}
+                     ],
+                     autoLoad: true,
+                     url: 'api/store/tutupbuku/dataStore.php'
+                }),
+                columns: [
+                    {text: 'Tahun', width: 90, sortable: true, dataIndex: 'tahun'},
+                    {text: 'Keterangan', flex: 1, sortable: true, dataIndex: 'keterangan'}
+                ]
+            }), {
+                xtype: 'container',
+                region: 'south',
+                items: [{
+                    xtype: 'container',
+                    height: 5
+                },{
+                    xtype: 'container',
+                    layout: 'hbox',
+                    items:[{
+                        xtype: 'container',
+                        width: 5
+                    }, {
+                        xtype: 'button',
+                        text: 'Proses Tutup Buku',
+                        listeners: {
+                            click: function() {
+                                Ext.create('Admin.view.webdesktop.tutupbuku.edit',{
+                                    parent: me
+                                }).show();
+                            }
+                        }
+                    }]
+                }, {
+                    xtype: 'container',
+                    height: 5                
+                }]
+            }
+        ];
+        
+        this.callParent(arguments);
+    }
+});
