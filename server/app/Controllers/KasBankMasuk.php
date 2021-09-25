@@ -19,9 +19,9 @@ class KasBankMasuk extends BaseController
         ];
 
         $table = "(SELECT MAX(RIGHT(nobukti, 5))+1 last_id FROM jurnal_srb A WHERE tipe_jurnal='".$tipe."' AND LEFT(nobukti, 3)='".$prefix[$tipe]."-') A";
-        $data = $model->db->table($tabel)->get()->getRowArray();
+        $data = $model->db->table($table)->get()->getRowArray();
 
-        $last = $data?$data['$data']:1;
+        $last = $data['last_id']<=0?1:$data['last_id'];
         $nobukti = $last;
         for ($i = 0; $i < 5 - strlen($last); $i++) {
             $nobukti = "0" . $nobukti;
@@ -33,7 +33,7 @@ class KasBankMasuk extends BaseController
             
 		return $this->respond($response, 200);
     }
-    
+
     public function index()
     {
         $model = new \App\Models\JurnalSrb();
